@@ -1,0 +1,31 @@
+[package]
+name = "rust_monitoring_system"
+version = "0.1.0"
+edition = "2021"
+authors = ["Monitoring System Team"]
+license = "BSD-3-Clause"
+description = "A production-ready, high-performance Rust monitoring framework for system observability"
+repository = "https://github.com/kcenon/rust_monitoring_system"
+keywords = ["monitoring", "metrics", "observability", "performance", "tracing"]
+categories = ["development-tools::profiling"]
+
+[dependencies]
+thiserror = "2.0"
+parking_lot = "0.12"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+chrono = "0.4"
+crossbeam = "0.8"
+sysinfo = "0.31"
+tokio = { version = "1.42", features = ["rt", "time", "macros"] }
+tracing = "0.1"
+string-interner = "0.17"
+
+[dev-dependencies]
+criterion = "0.5"
+tracing-subscriber = "0.3"
+proptest = "1.4"
+
+[[bench]]
+name = "monitoring_benchmarks"
+harness = false
